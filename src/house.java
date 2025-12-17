@@ -3,7 +3,7 @@ public class house {
     private String peculiarity = new String("rotates");
     private int enters = 4;
 
-    public void house(){
+    public house(){
         System.out.println("Дом");
     }
     public void direction() {
