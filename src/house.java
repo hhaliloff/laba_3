@@ -27,4 +27,10 @@ public class house {
     public void description() {
         System.out.println("Дом имеет " + enters + " подъезда и является " + peculiarity + " домом " + type + " тип.");
     }
+
+    public void checkEntrance(int entranceNumber) throws WrongEntranceException {
+        if (entranceNumber != enters || entranceNumber < 1) {
+            throw new WrongEntranceException();
+        }
+    }
 }

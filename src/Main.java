@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.ArrayList;
 
 public class Main {
@@ -15,6 +14,10 @@ public class Main {
         flatmatesList.add(f1);
         flatmatesList.add(f2);
 
+        ArrayList<directions> entranceList = new ArrayList<>();
+
+        door_status door = new door_status(true);
+
         house h = new house();
 
         elevator e = new elevator();
@@ -27,11 +30,29 @@ public class Main {
         v.building();
         h.description();
         h.set_direction();
+        entranceList.add(h.current_direction);
         h.direction();
         s.coming_home();
         h.set_direction();
+        entranceList.add(h.current_direction);
         h.direction();
+
+        try {
+            h.checkEntrance(3); // подъезд 4
+            System.out.println("подъезд правильный");
+        } catch (WrongEntranceException ex) {
+            System.out.println(ex.getMessage());
+        }
+
         e.get_up();
+
+        if (door.isOpen()) {
+            System.out.println("Дверь открыта.");
+        } else {
+            System.out.println("Дверь закрыта.");
+        }
+
+
         alien.alien_flat();
 
         Boolean anyAtHome = false;
@@ -43,7 +64,7 @@ public class Main {
         }
 
         if (anyAtHome == false) {
-            f1.not_at_home();
+            f1.showMessage();
         }
 
         System.out.println("Мебель " + furn.similar);

@@ -1,4 +1,4 @@
-public class flatmates extends man{
+public class flatmates extends man implements not_at_home {
 
     public Boolean AreAtHome = false;
 
@@ -7,7 +7,8 @@ public class flatmates extends man{
         super(name, sexValue, age, proffesion, eyesColor, hairColor);
     }
 
-    public void not_at_home(){
+    @Override
+    public void showMessage() {
         System.out.println("Соседи отсутствуют дома.");
     }
 
