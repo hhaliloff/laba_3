@@ -1,6 +1,6 @@
 public class flatmates extends man{
 
-    private Boolean AreAtHome = false;
+    public Boolean AreAtHome = false;
 
     public flatmates(String name, sex sexValue, int age, String proffesion,
                       eyes_color eyesColor, hair_color hairColor) {

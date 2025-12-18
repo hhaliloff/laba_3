@@ -1,8 +1,8 @@
 public class furniture {
 
-    private String similar = new String("not similar");
+    public String similar = new String("не похожа");
 
-    public furniture(){
+    public void furniture(){
         System.out.println("Мебель");
     }
 
